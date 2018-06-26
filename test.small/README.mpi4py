@@ -2,9 +2,9 @@ Dave Turner - Kansas State University - April 2018++
 daveturner@ksu.edu
 
 I've parallelized Pyxaid with MPI using mpi4py in the Python code.
-My version can be pulled from the git repository:
+This version can be pulled from the git repository:
 
-https://gitlab.beocat.ksu.edu/daveturner/pyxaid.mpi4py
+https://github.com/Quantum-Dynamics-Hub/pyxaid-code-mpi
 
 para-pyxaid.py provides a good starting place.  You should just need to
 set scr_dir to use global scratch or the local disk on each node.
@@ -89,24 +89,11 @@ def average(namdtime,num_states,iconds,opt,MS,inp_dir,res_dir,myproc,nprocs):
             i = i + nprocs
             #i = i + 1
 
-*************************************************
-******* Note on the random number generator *****
-*************************************************
-The scalar version of Pyxaid uses srand(time(0)) as a seed.
+--> Note on the random number generator
+The scalar version of Pyxaid uses srand(time(0)).
 For the MPI version each MPI task will use srand(myproc+time(0))
-just so each will get a different seed even if they should get the same
-time returned.  There is no guarantee that the random sequences won't overlap,
-but this is statistically unlikely for this code. I also don't know if it
-would be a problem for this code if the random sequences were to overlap.
-    My reading of "Extensions of Forsythe's Method for Random Sampling from
-the Normal Distribution", Math of Comp, V 27, N 124, Oct 1973 is that 
-the FL algorithm has a period of approximately 2^46 or 7e13.  This means
-for a very large 70 core run, there would be on average a 10^12 sequence for 
-each core.  A fairly large 70 state run with 10 tests per state would need 
-a sequence around a few billion.  If my numbers are correct, this means
-the average sequence available for each core would be at worst about
-1000 times larger than the length needed.
-
-    If this is a worry, there are parallel random number generators that could 
-be incorporated (http://statmath.wu.ac.at/software/RngStreams/doc/rngstreams.html).  
+just so each will get a different seed even if they all got the same
+time back.  There is no guarantee that the random sequences don't overlap,
+but this is statistically very unlikely for this code.  If this is a worry,
+there are parallel random number generators that could be incorporated.
 

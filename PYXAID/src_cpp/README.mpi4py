@@ -2,9 +2,9 @@ Dave Turner - Kansas State University - April 2018++
 daveturner@ksu.edu
 
 I've parallelized Pyxaid with MPI using mpi4py in the Python code.
-My version can be pulled from the git repository:
+This version can be pulled from the git repository:
 
-https://gitlab.beocat.ksu.edu/daveturner/pyxaid.mpi4py
+https://github.com/Quantum-Dynamics-Hub/pyxaid-code-mpi
 
 para-pyxaid.py provides a good starting place.  You should just need to
 set scr_dir to use global scratch or the local disk on each node.
