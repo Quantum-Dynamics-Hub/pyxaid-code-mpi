@@ -1,0 +1,208 @@
+    time in seconds    +children       calls    name
+    241.442 ( 90.2%)    241.606            4  run_namd1()         
+     23.665 (  8.8%)     23.665            4  run_deco_rates()    
+      1.620 (  0.6%)    266.891            1  icond loop          
+      0.751 (  0.3%)      0.751         7904  file2matrix()       
+      0.164 (  0.1%)      0.164            4  run_namd1() output  
+      0.029 (  0.0%)      0.780            1  Initialization      
+      0.000 (  0.0%)    267.671            1  namd() entry        
+
+  Total time is 267.670795 secs    (0 hours  4 mins  27.671 secs) on hero35
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    242.081 ( 90.1%)    242.252            4  run_namd1()         
+     23.797 (  8.9%)     23.797            4  run_deco_rates()    
+      1.648 (  0.6%)    267.696            1  icond loop          
+      0.925 (  0.3%)      0.925         7904  file2matrix()       
+      0.171 (  0.1%)      0.171            4  run_namd1() output  
+      0.032 (  0.0%)      0.958            1  Initialization      
+      0.000 (  0.0%)    268.654            1  namd() entry        
+
+  Total time is 268.653890 secs    (0 hours  4 mins  28.654 secs) on hero35
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    242.462 ( 90.2%)    242.631            4  run_namd1()         
+     23.689 (  8.8%)     23.689            4  run_deco_rates()    
+      1.633 (  0.6%)    267.953            1  icond loop          
+      0.735 (  0.3%)      0.735         7904  file2matrix()       
+      0.169 (  0.1%)      0.169            4  run_namd1() output  
+      0.029 (  0.0%)      0.764            1  Initialization      
+      0.000 (  0.0%)    268.717            1  namd() entry        
+
+  Total time is 268.716726 secs    (0 hours  4 mins  28.717 secs) on hero35
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    242.274 ( 90.1%)    242.443            4  run_namd1()         
+     24.119 (  9.0%)     24.119            4  run_deco_rates()    
+      1.641 (  0.6%)    268.203            1  icond loop          
+      0.734 (  0.3%)      0.734         7904  file2matrix()       
+      0.169 (  0.1%)      0.169            4  run_namd1() output  
+      0.030 (  0.0%)      0.764            1  Initialization      
+      0.000 (  0.0%)    268.967            1  namd() entry        
+
+  Total time is 268.967039 secs    (0 hours  4 mins  28.967 secs) on hero35
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    242.754 ( 90.2%)    242.928            4  run_namd1()         
+     23.661 (  8.8%)     23.661            4  run_deco_rates()    
+      1.628 (  0.6%)    268.218            1  icond loop          
+      0.735 (  0.3%)      0.735         7904  file2matrix()       
+      0.174 (  0.1%)      0.174            4  run_namd1() output  
+      0.029 (  0.0%)      0.764            1  Initialization      
+      0.000 (  0.0%)    268.982            1  namd() entry        
+
+  Total time is 268.981896 secs    (0 hours  4 mins  28.982 secs) on hero35
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    263.746 ( 90.9%)    263.908            4  run_namd1()         
+     23.814 (  8.2%)     23.814            4  run_deco_rates()    
+      1.635 (  0.6%)    289.357            1  icond loop          
+      0.913 (  0.3%)      0.913         7904  file2matrix()       
+      0.162 (  0.1%)      0.162            4  run_namd1() output  
+      0.029 (  0.0%)      0.942            1  Initialization      
+      0.000 (  0.0%)    290.300            1  namd() entry        
+
+  Total time is 290.299931 secs    (0 hours  4 mins  50.300 secs) on hero35
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    263.659 ( 90.3%)    263.845            4  run_namd1()         
+     25.750 (  8.8%)     25.750            4  run_deco_rates()    
+      1.725 (  0.6%)    291.320            1  icond loop          
+      0.791 (  0.3%)      0.791         7904  file2matrix()       
+      0.186 (  0.1%)      0.186            4  run_namd1() output  
+      0.032 (  0.0%)      0.823            1  Initialization      
+      0.000 (  0.0%)    292.142            1  namd() entry        
+
+  Total time is 292.142481 secs    (0 hours  4 mins  52.142 secs) on hero35
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    265.349 ( 90.3%)    265.535            4  run_namd1()         
+     25.820 (  8.8%)     25.820            4  run_deco_rates()    
+      1.738 (  0.6%)    293.092            1  icond loop          
+      0.791 (  0.3%)      0.791         7904  file2matrix()       
+      0.186 (  0.1%)      0.186            4  run_namd1() output  
+      0.031 (  0.0%)      0.823            1  Initialization      
+      0.000 (  0.0%)    293.915            1  namd() entry        
+
+  Total time is 293.914781 secs    (0 hours  4 mins  53.915 secs) on hero35
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    265.037 ( 90.2%)    265.216            4  run_namd1()         
+     26.202 (  8.9%)     26.202            4  run_deco_rates()    
+      1.717 (  0.6%)    293.136            1  icond loop          
+      0.791 (  0.3%)      0.791         7904  file2matrix()       
+      0.179 (  0.1%)      0.179            4  run_namd1() output  
+      0.032 (  0.0%)      0.823            1  Initialization      
+      0.000 (  0.0%)    293.958            1  namd() entry        
+
+  Total time is 293.958208 secs    (0 hours  4 mins  53.958 secs) on hero35
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    282.083 ( 90.8%)    282.274            4  run_namd1()         
+     25.877 (  8.3%)     25.877            4  run_deco_rates()    
+      1.826 (  0.6%)    309.977            1  icond loop          
+      0.790 (  0.3%)      0.790         7904  file2matrix()       
+      0.191 (  0.1%)      0.191            4  run_namd1() output  
+      0.032 (  0.0%)      0.823            1  Initialization      
+      0.000 (  0.0%)    310.799            1  namd() entry        
+
+  Total time is 310.799354 secs    (0 hours  5 mins  10.799 secs) on hero35
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    302.525 ( 90.3%)    302.734            5  run_namd1()         
+     29.612 (  8.8%)     29.612            5  run_deco_rates()    
+      2.042 (  0.6%)    334.388            1  icond loop          
+      0.733 (  0.2%)      0.733         7905  file2matrix()       
+      0.209 (  0.1%)      0.209            5  run_namd1() output  
+      0.031 (  0.0%)      0.764            1  Initialization      
+      0.000 (  0.0%)    335.152            1  namd() entry        
+
+  Total time is 335.151988 secs    (0 hours  5 mins  35.152 secs) on hero35
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    302.675 ( 90.3%)    302.888            5  run_namd1()         
+     29.582 (  8.8%)     29.582            5  run_deco_rates()    
+      2.029 (  0.6%)    334.499            1  icond loop          
+      0.735 (  0.2%)      0.735         7905  file2matrix()       
+      0.212 (  0.1%)      0.212            5  run_namd1() output  
+      0.029 (  0.0%)      0.764            1  Initialization      
+      0.000 (  0.0%)    335.263            1  namd() entry        
+
+  Total time is 335.262807 secs    (0 hours  5 mins  35.263 secs) on hero35
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    302.861 ( 90.3%)    303.071            5  run_namd1()         
+     29.641 (  8.8%)     29.641            5  run_deco_rates()    
+      2.043 (  0.6%)    334.754            1  icond loop          
+      0.735 (  0.2%)      0.735         7905  file2matrix()       
+      0.209 (  0.1%)      0.209            5  run_namd1() output  
+      0.029 (  0.0%)      0.764            1  Initialization      
+      0.000 (  0.0%)    335.519            1  namd() entry        
+
+  Total time is 335.518507 secs    (0 hours  5 mins  35.519 secs) on hero35
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    303.378 ( 90.3%)    303.585            5  run_namd1()         
+     29.562 (  8.8%)     29.562            5  run_deco_rates()    
+      2.043 (  0.6%)    335.190            1  icond loop          
+      0.734 (  0.2%)      0.734         7905  file2matrix()       
+      0.206 (  0.1%)      0.206            5  run_namd1() output  
+      0.030 (  0.0%)      0.764            1  Initialization      
+      0.000 (  0.0%)    335.953            1  namd() entry        
+
+  Total time is 335.953278 secs    (0 hours  5 mins  35.953 secs) on hero35
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    327.488 ( 90.3%)    327.708            5  run_namd1()         
+     31.910 (  8.8%)     31.910            5  run_deco_rates()    
+      2.273 (  0.6%)    361.891            1  icond loop          
+      0.790 (  0.2%)      0.790         7905  file2matrix()       
+      0.220 (  0.1%)      0.220            5  run_namd1() output  
+      0.033 (  0.0%)      0.823            1  Initialization      
+      0.000 (  0.0%)    362.713            1  namd() entry        
+
+  Total time is 362.713180 secs    (0 hours  6 mins   2.713 secs) on hero35
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    327.894 ( 90.2%)    328.116            5  run_namd1()         
+     32.008 (  8.8%)     32.008            5  run_deco_rates()    
+      2.171 (  0.6%)    362.296            1  icond loop          
+      1.011 (  0.3%)      1.011         7905  file2matrix()       
+      0.222 (  0.1%)      0.222            5  run_namd1() output  
+      0.033 (  0.0%)      1.044            1  Initialization      
+      0.000 (  0.0%)    363.340            1  namd() entry        
+
+  Total time is 363.340126 secs    (0 hours  6 mins   3.340 secs) on hero35
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+

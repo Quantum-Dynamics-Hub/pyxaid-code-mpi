@@ -1,0 +1,53 @@
+&CONTROL
+  calculation = 'scf',
+  pseudo_dir = '/projects/academic/alexeyak/alexeyak/pyxaid-code/tutorials/Tut2_small/step1/',
+  outdir = './',
+  prefix = 'x0',
+  disk_io = 'low',
+  wf_collect = .true.
+/
+
+&SYSTEM
+  ibrav = 0,
+  celldm(1) = 1.89,
+  nat = 6,
+  ntyp = 2,
+  nspin = 2,
+  nbnd = 20,
+  ecutwfc = 30,
+  tot_charge = 0.0,
+  starting_magnetization(1) = 0.01
+  occupations = 'smearing',
+  smearing = 'gaussian',
+  degauss = 0.005,
+  nosym = .true.,
+
+/
+
+&ELECTRONS
+  electron_maxstep = 300,
+  conv_thr = 1.D-5,
+  mixing_beta = 0.45,
+/
+
+&IONS
+  ion_dynamics = 'verlet',
+  ion_temperature = 'andersen',
+  tempw = 300.00 ,
+  nraise = 1,
+/
+
+
+ATOMIC_SPECIES
+ C  12.01  C.pbe-hgh.UPF
+ H  1.008  H.pbe-hgh.UPF
+
+
+K_POINTS gamma                  
+                               
+CELL_PARAMETERS
+    10.0000000    0.0000000    0.0000000
+     0.0000000   10.0000000    0.0000000
+     0.0000000    0.0000000   10.0000000
+ 
+

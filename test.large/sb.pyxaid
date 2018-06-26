@@ -1,0 +1,35 @@
+#!/bin/bash -l
+
+#SBATCH --job-name=pyxaid 
+#SBATCH --output=%x.o%j
+
+# Use --nodes= and --ntasks-per-node= for Pyxaid, not --ntasks
+# otherwise Slurm may fail to bind processes to cores properly
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=32
+
+#SBATCH --time=4-00:00:00
+#SBATCH --mem=90G
+#SBATCH --tmp=200G         # kstat -l -h    to see how much /tmp each node has
+                           # 49 state x 10 requires ~100 GB /tmp so ask for more
+
+#SBATCH --constraint=wizards
+#SBATCH --partition=ksu-chem-mri.q,batch.q
+
+
+# Load the Python and Boost modules - NOTE: foss versions are necessary
+
+export PYTHONPATH=/homes/daveturner/apps/pyxaid.mpi
+module purge
+module load Boost/1.63.0-foss-2017beocatb-Python-2.7.13
+
+
+# Run the python script which will use /tmp for all output files
+
+time mpirun -np $SLURM_NPROCS python2 para-pyxaid.py
+
+
+# List icond files in the archive with:     tar -tvzf spectral_density.tar.gz
+# Extract files with:   tar -xvzf spectral_density.tar.gz filename1 filename2 ...
+# Example: tar -xvzf spectral_density.tar.gz icond6pair2_0Spectral_density.txt
+

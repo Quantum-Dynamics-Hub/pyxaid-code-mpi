@@ -1,0 +1,112 @@
+Dave Turner - Kansas State University - April 2018++
+daveturner@ksu.edu
+
+I've parallelized Pyxaid with MPI using mpi4py in the Python code.
+My version can be pulled from the git repository:
+
+https://gitlab.beocat.ksu.edu/daveturner/pyxaid.mpi4py
+
+para-pyxaid.py provides a good starting place.  You should just need to
+set scr_dir to use global scratch or the local disk on each node.
+ham_dir will be the locatation of the tarred and gzipped hamiltonian
+directory 'res' as res.tar.gz.
+Then define all params[] that you need, and run using something like:
+
+mpirun -np 10 python para-pyxaid.py
+
+The para-pyxaid.py code distributes the res directory to scratch using
+res.tar.gz.  This saves a lot of time on some parallel file systems like
+ours (CEPH).
+The para-pyxaid.py code also tars and gzips the icond*Spectral_density files
+to a single file on the cwd at the end.  Some file systems like CEPH that 
+we use cannot handle the millions of files in a directory that Pyxaid can generate.
+These can be extracted using:
+
+# List files in the archive with:     tar -tvzf spectral_density.tar.gz
+# Extract files with:   tar -xvzf spectral_density.tar.gz filename1 filename2 ...
+# Example: tar -xvzf spectral_density.tar.gz icond6pair2_0Spectral_density.txt
+
+You may want to alter or eliminate managing the icond files in the Python
+script depending on your setup.
+
+The average.py run at the end also has been parallelized.  I see about
+a 6x speedup max since it's write IO bound, but that is enough to make
+it small compared to the parallelized C++ time.
+
+
+### Note to developers:  Below are changes made to the C++ code
+-> In namd_export.cpp change the icond loop
+  //for(icond=0;icond<iconds.size();icond++){  // first_icond may start from 0, not 1
+     // Use myproc and nprocs to loop through my iconds only
+  for( icond=params.myproc; icond<iconds.size(); icond += params.nprocs){
+-> Add myproc and nprocs variables to the InputStructure class in InputStructure.h
+  int myproc, nprocs;  // MPI parameters passed in from the Python side
+-> Extract the MPI parameters in the InputStructure class in InputStructure.cpp
+        // Pull in the MPI parameters
+    else if(s1=="myproc"){ myproc = extract<int>(params[s1]); }
+    else if(s1=="nprocs"){ nprocs = extract<int>(params[s1]); }
+-> Add these to the init() in InputStructure.cpp
+  myproc = 0;  // These defaults will allow the C++ code to still work
+  nprocs = 1;  // when called from a non-MPI Python script
+-> I also added in mytimer.cpp timing routines
+-> I removed the variable names and units in the icond*Spectral_density.txt files to cut
+   the file size in half.
+  // Output D and its model(based on the fitted parameters)
+  ofstream out1((rt_dir+"Spectral_density.txt").c_str(),ios::out);
+  for(w=0;w<Npoints;w++){
+    //out1 << "w(eV)= " << w*dE << " w(cm^-1)= " << w*dE*8065.54468111324 << " J= " << J[w]
+                             //<< " sqrt(J)= " << sqrt(J[w]) << endl;
+    out1 << w*dE << " " << w*dE*8065.54468111324 << " " << J[w]
+                             << " " << sqrt(J[w]) << endl;
+  }
+  out1.close();
+-> Our group doesn't use the icond*Dephasing_function.txt data so I commented this
+   out in namd.cpp to save disk space.  Could add this as a params[] option.
+  // Our group doesn't use the Dephasing data so commenting this out to save disk space
+  //ofstream out((rt_dir+"Dephasing_function.txt").c_str(),ios::out);
+  //out<<"Time    D(t)       fitted D(t)     Normalized_autocorrelation_function  Unnormalized_autocorrelation_function   Second cumulant\n";
+  //for(t=0;t<sz;t++){  out<<t*dt<<"  "<<D[t]<<"  "<<exp(-a) * exp(-b*t*t*dt*dt)<<"  "<<C[t]<<" "<<nrm*C[t]<<"  "<<IIC[t]<<"\n";  }
+  //out.close();
+
+### Note to developers:  Below are changes made to the average.py code
+-> myproc and nprocs are passed in as the last 2 parameters
+def average(namdtime,num_states,iconds,opt,MS,inp_dir,res_dir,myproc,nprocs):
+-> Each proc grabs its share of the distinct excitations
+    my_dist_ex = []      # Distinct excitations for my proc to do
+    i = 0
+    for dex in dist_ex:
+        if (i % nprocs) == myproc:
+            my_dist_ex.append( dex )
+        i = i + 1
+-> Added a print statement
+    print "Number distinct initial excitations for myproc = ", len(my_dist_ex), my_dist_ex-> The first loop will be over my_dist_ex now
+        #for in_ex in dist_ex:
+        for in_ex in my_dist_ex:
+-> The second loop gets split as well - for i = myproc to num_macro_state step nprocs
+        #i = 0
+        i = myproc
+        while i<num_macro_states:
+            i = i + nprocs
+            #i = i + 1
+
+*************************************************
+******* Note on the random number generator *****
+*************************************************
+The scalar version of Pyxaid uses srand(time(0)) as a seed.
+For the MPI version each MPI task will use srand(myproc+time(0))
+just so each will get a different seed even if they should get the same
+time returned.  There is no guarantee that the random sequences won't overlap,
+but this is statistically unlikely for this code. I also don't know if it
+would be a problem for this code if the random sequences were to overlap.
+    My reading of "Extensions of Forsythe's Method for Random Sampling from
+the Normal Distribution", Math of Comp, V 27, N 124, Oct 1973 is that 
+the FL algorithm has a period of approximately 2^46 or 7e13.  This means
+for a very large 70 core run, there would be on average a 10^12 sequence for 
+each core.  A fairly large 70 state run with 10 tests per state would need 
+a sequence around a few billion.  If my numbers are correct, this means
+the average sequence available for each core would be at worst about
+1000 times larger than the length needed.
+
+    If this is a worry, there are parallel random number generators that could 
+be incorporated (http://statmath.wu.ac.at/software/RngStreams/doc/rngstreams.html).  
+

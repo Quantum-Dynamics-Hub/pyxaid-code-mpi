@@ -1,0 +1,208 @@
+    time in seconds    +children       calls    name
+    233.133 ( 89.2%)    233.297            4  run_namd1()         
+     25.521 (  9.8%)     25.521            4  run_deco_rates()    
+      1.748 (  0.7%)    260.566            1  icond loop          
+      0.720 (  0.3%)      0.720         7904  file2matrix()       
+      0.164 (  0.1%)      0.164            4  run_namd1() output  
+      0.029 (  0.0%)      0.749            1  Initialization      
+      0.000 (  0.0%)    261.315            1  namd() entry        
+
+  Total time is 261.315070 secs    (0 hours  4 mins  21.315 secs) on wizard01
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    233.817 ( 89.5%)    233.978            4  run_namd1()         
+     24.724 (  9.5%)     24.724            4  run_deco_rates()    
+      1.733 (  0.7%)    260.435            1  icond loop          
+      0.720 (  0.3%)      0.720         7904  file2matrix()       
+      0.161 (  0.1%)      0.161            4  run_namd1() output  
+      0.030 (  0.0%)      0.749            1  Initialization      
+      0.000 (  0.0%)    261.185            1  namd() entry        
+
+  Total time is 261.184604 secs    (0 hours  4 mins  21.185 secs) on wizard01
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    234.287 ( 89.6%)    234.448            4  run_namd1()         
+     24.682 (  9.4%)     24.682            4  run_deco_rates()    
+      1.716 (  0.7%)    260.846            1  icond loop          
+      0.719 (  0.3%)      0.719         7904  file2matrix()       
+      0.161 (  0.1%)      0.161            4  run_namd1() output  
+      0.029 (  0.0%)      0.748            1  Initialization      
+      0.000 (  0.0%)    261.594            1  namd() entry        
+
+  Total time is 261.593815 secs    (0 hours  4 mins  21.594 secs) on wizard01
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    234.596 ( 89.6%)    234.768            4  run_namd1()         
+     24.684 (  9.4%)     24.684            4  run_deco_rates()    
+      1.744 (  0.7%)    261.196            1  icond loop          
+      0.723 (  0.3%)      0.723         7904  file2matrix()       
+      0.172 (  0.1%)      0.172            4  run_namd1() output  
+      0.029 (  0.0%)      0.752            1  Initialization      
+      0.000 (  0.0%)    261.947            1  namd() entry        
+
+  Total time is 261.947373 secs    (0 hours  4 mins  21.947 secs) on wizard01
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    234.892 ( 89.6%)    235.056            4  run_namd1()         
+     24.647 (  9.4%)     24.647            4  run_deco_rates()    
+      1.709 (  0.7%)    261.412            1  icond loop          
+      0.720 (  0.3%)      0.720         7904  file2matrix()       
+      0.164 (  0.1%)      0.164            4  run_namd1() output  
+      0.029 (  0.0%)      0.749            1  Initialization      
+      0.000 (  0.0%)    262.160            1  namd() entry        
+
+  Total time is 262.160210 secs    (0 hours  4 mins  22.160 secs) on wizard01
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    235.285 ( 89.6%)    235.454            4  run_namd1()         
+     24.649 (  9.4%)     24.649            4  run_deco_rates()    
+      1.731 (  0.7%)    261.834            1  icond loop          
+      0.718 (  0.3%)      0.718         7904  file2matrix()       
+      0.169 (  0.1%)      0.169            4  run_namd1() output  
+      0.030 (  0.0%)      0.748            1  Initialization      
+      0.000 (  0.0%)    262.582            1  namd() entry        
+
+  Total time is 262.582128 secs    (0 hours  4 mins  22.582 secs) on wizard01
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    235.297 ( 89.6%)    235.464            4  run_namd1()         
+     24.677 (  9.4%)     24.677            4  run_deco_rates()    
+      1.715 (  0.7%)    261.857            1  icond loop          
+      0.718 (  0.3%)      0.718         7904  file2matrix()       
+      0.167 (  0.1%)      0.167            4  run_namd1() output  
+      0.030 (  0.0%)      0.748            1  Initialization      
+      0.000 (  0.0%)    262.605            1  namd() entry        
+
+  Total time is 262.604588 secs    (0 hours  4 mins  22.605 secs) on wizard01
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    235.506 ( 89.6%)    235.670            4  run_namd1()         
+     24.684 (  9.4%)     24.684            4  run_deco_rates()    
+      1.724 (  0.7%)    262.078            1  icond loop          
+      0.722 (  0.3%)      0.722         7904  file2matrix()       
+      0.163 (  0.1%)      0.163            4  run_namd1() output  
+      0.030 (  0.0%)      0.752            1  Initialization      
+      0.000 (  0.0%)    262.830            1  namd() entry        
+
+  Total time is 262.829712 secs    (0 hours  4 mins  22.830 secs) on wizard01
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    236.337 ( 89.6%)    236.509            4  run_namd1()         
+     24.673 (  9.4%)     24.673            4  run_deco_rates()    
+      1.705 (  0.6%)    262.887            1  icond loop          
+      0.718 (  0.3%)      0.718         7904  file2matrix()       
+      0.171 (  0.1%)      0.171            4  run_namd1() output  
+      0.030 (  0.0%)      0.748            1  Initialization      
+      0.000 (  0.0%)    263.635            1  namd() entry        
+
+  Total time is 263.635477 secs    (0 hours  4 mins  23.635 secs) on wizard01
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    236.699 ( 89.6%)    236.867            4  run_namd1()         
+     24.764 (  9.4%)     24.764            4  run_deco_rates()    
+      1.719 (  0.7%)    263.349            1  icond loop          
+      0.719 (  0.3%)      0.719         7904  file2matrix()       
+      0.167 (  0.1%)      0.167            4  run_namd1() output  
+      0.029 (  0.0%)      0.748            1  Initialization      
+      0.000 (  0.0%)    264.097            1  namd() entry        
+
+  Total time is 264.097323 secs    (0 hours  4 mins  24.097 secs) on wizard01
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    289.976 ( 89.5%)    290.176            5  run_namd1()         
+     30.882 (  9.5%)     30.882            5  run_deco_rates()    
+      2.150 (  0.7%)    323.208            1  icond loop          
+      0.719 (  0.2%)      0.719         7905  file2matrix()       
+      0.200 (  0.1%)      0.200            5  run_namd1() output  
+      0.031 (  0.0%)      0.749            1  Initialization      
+      0.000 (  0.0%)    323.957            1  namd() entry        
+
+  Total time is 323.957330 secs    (0 hours  5 mins  23.957 secs) on wizard01
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    293.135 ( 89.6%)    293.339            5  run_namd1()         
+     30.955 (  9.5%)     30.955            5  run_deco_rates()    
+      2.132 (  0.7%)    326.426            1  icond loop          
+      0.719 (  0.2%)      0.719         7905  file2matrix()       
+      0.204 (  0.1%)      0.204            5  run_namd1() output  
+      0.029 (  0.0%)      0.748            1  Initialization      
+      0.000 (  0.0%)    327.174            1  namd() entry        
+
+  Total time is 327.174252 secs    (0 hours  5 mins  27.174 secs) on wizard01
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    293.011 ( 89.5%)    293.218            5  run_namd1()         
+     31.142 (  9.5%)     31.142            5  run_deco_rates()    
+      2.156 (  0.7%)    326.515            1  icond loop          
+      0.719 (  0.2%)      0.719         7905  file2matrix()       
+      0.206 (  0.1%)      0.206            5  run_namd1() output  
+      0.029 (  0.0%)      0.748            1  Initialization      
+      0.000 (  0.0%)    327.263            1  namd() entry        
+
+  Total time is 327.263446 secs    (0 hours  5 mins  27.263 secs) on wizard01
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    293.463 ( 89.6%)    293.666            5  run_namd1()         
+     30.795 (  9.4%)     30.795            5  run_deco_rates()    
+      2.146 (  0.7%)    326.608            1  icond loop          
+      0.725 (  0.2%)      0.725         7905  file2matrix()       
+      0.203 (  0.1%)      0.203            5  run_namd1() output  
+      0.029 (  0.0%)      0.753            1  Initialization      
+      0.000 (  0.0%)    327.361            1  namd() entry        
+
+  Total time is 327.361067 secs    (0 hours  5 mins  27.361 secs) on wizard01
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    293.393 ( 89.6%)    293.601            5  run_namd1()         
+     30.860 (  9.4%)     30.860            5  run_deco_rates()    
+      2.150 (  0.7%)    326.612            1  icond loop          
+      0.727 (  0.2%)      0.727         7905  file2matrix()       
+      0.208 (  0.1%)      0.208            5  run_namd1() output  
+      0.030 (  0.0%)      0.757            1  Initialization      
+      0.000 (  0.0%)    327.369            1  namd() entry        
+
+  Total time is 327.368922 secs    (0 hours  5 mins  27.369 secs) on wizard01
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
+    time in seconds    +children       calls    name
+    293.832 ( 89.6%)    294.035            5  run_namd1()         
+     31.179 (  9.5%)     31.179            5  run_deco_rates()    
+      2.149 (  0.7%)    327.364            1  icond loop          
+      0.719 (  0.2%)      0.719         7905  file2matrix()       
+      0.203 (  0.1%)      0.203            5  run_namd1() output  
+      0.029 (  0.0%)      0.748            1  Initialization      
+      0.000 (  0.0%)    328.112            1  namd() entry        
+
+  Total time is 328.111756 secs    (0 hours  5 mins  28.112 secs) on wizard01
+  Timer overhead ~ 0.100000 usecs  no cutoff for now
+
+
