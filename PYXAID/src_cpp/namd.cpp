@@ -28,6 +28,8 @@
 
 *****************************************************************/
 
+// Created new function hop_liovelle to use the sequence of states defined previously 
+// and use that sequence to calculate the hopping probabilities 
 
 void hop(vector<double>& sh_prob,int& hopstate,int numstates){
 /***********************************************
@@ -46,6 +48,7 @@ void hop(vector<double>& sh_prob,int& hopstate,int numstates){
   double nrm = 0.0;
   for(i=0;i<numstates;i++){  nrm += sh_prob[in*numstates+i];  }  
 
+  // Instead of i = 0 to numstate, we use calculated sequence of states 
   for(i=0;i<numstates;i++){
     if(i==0){ left = 0.0; right = (sh_prob[in*numstates+i]/nrm); }
     else{ left = right;   right += (sh_prob[in*numstates+i]/nrm); }
@@ -312,6 +315,11 @@ void Efield(InputStructure& is,double t,matrix& E,double& Eex){
 }
 
 
+// it's used to solve differential equations for the coefficients 
+// There are 4 different ways to solve the equations 
+// For all different possibilities, we use different integrators. 
+// The integrator is specified by the variable is.integrator
+
 void propagate_electronic(InputStructure& is,vector<ElectronicStructure>& es,int i, matrix& rates){
 
   int nel = is.nucl_dt/is.elec_dt; // Number of electronic iterations per 1 nuclear
@@ -339,6 +347,7 @@ void propagate_electronic(InputStructure& is,vector<ElectronicStructure>& es,int
       es[i].t_m[0] += is.elec_dt; 
 
       // Update hopping probabilities
+      // We have worked on fssh 
       if(is.sh_algo==0){ es[i].update_hop_prob_fssh(is.elec_dt,is.boltz_flag,is.Temp,Ef,Eex,rates);  }
       else if(is.sh_algo==1){  es[i].update_hop_prob_gfsh(is.elec_dt,is.boltz_flag,is.Temp,Ef,Eex,rates);  }
       else if(is.sh_algo==2){  es[i].update_hop_prob_mssh(is.elec_dt,is.boltz_flag,is.Temp,Ef,Eex,rates);  }
@@ -939,12 +948,15 @@ void run_namd1(InputStructure& is, vector<ElectronicStructure>& me_es,vector<me_
   // The outer loop (which calls run_namd1 function) averages over initial conditions
 
   // Do the hops - averaging over trajectories (stochastic realizations)
+
+  // How many time we run the surface hopping for each initial condition 
   for(n=0;n<is.num_sh_traj;n++){
 
     me_es[0].set_state(init_state);
     me_es[0].t_m[0] = 0.0; // Time since last hop
 
     // Loop over time
+    // sz is namd time
     for(i=0;i<sz;i++){
 
       //============ Solve TD-SE and do SH ============
@@ -952,6 +964,9 @@ void run_namd1(InputStructure& is, vector<ElectronicStructure>& me_es,vector<me_
       if(i>0){   me_es[i] << me_es[i-1]; } 
 
       // Solve TD-SE for i-th time step
+
+      // Initialization of hopping probability, setting same states to 1 and rest to 0
+
       me_es[i].init_hop_prob1();
       propagate_electronic(is,me_es,i,rates);    // update_hop_prob -is called in there 
                                                  // rates are only used if decoherence==5 or decoherence==6
