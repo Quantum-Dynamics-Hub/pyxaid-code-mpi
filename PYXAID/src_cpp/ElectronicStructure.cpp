@@ -169,6 +169,10 @@ void ElectronicStructure::init_hop_prob1(){
   }// for i
 }
 
+
+// Major changes in this function: Smit
+
+// Later we added new function update_hop_prob_fssh_liovelle 
 void ElectronicStructure::update_hop_prob_fssh(double dt,int boltz_flag, double Temp,matrix& Ef,double Eex, matrix& rates){
 /*******************************************************
  Here we actually sum up all the transition probabilities
@@ -185,6 +189,8 @@ void ElectronicStructure::update_hop_prob_fssh(double dt,int boltz_flag, double 
     if (a_ii==0.0){ a_ii = 1e-12; }
 
     double sum = 0.0;
+
+    // Finding hopping probabilities from one state to others ie i to j (j!=i)
     for(int j=0;j<num_states;j++){
       if(j!=i){
         // In general the expression is:

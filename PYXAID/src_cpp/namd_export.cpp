@@ -26,6 +26,9 @@ using namespace boost::python;
 using namespace std;
 
 
+// This function is called from python and this function is the beginning of the program
+
+
 int namd(boost::python::dict inp_params){
 
   time_t t1 = clock();
@@ -38,10 +41,15 @@ int namd(boost::python::dict inp_params){
   timer.Start("Initialization");
 
   // General input parameters from the python dictionary
+  // Reading input parameters from the python dictionary and setting up the parameters
   InputStructure params(inp_params);
 
   // Define ME basis
+
   vector<me_state> me_states;
+  // Reading input parameters from the python dictionary and setting up the parameters in me_states vector which is vector of me_state structures 
+  // me_state structure is defined in state.h
+
   input_states(inp_params,me_states); // Convention will be to count from 1, where 1 - is the first orbital from input
                                       // (real and energy files), not necessarily the actual first orbital of the system
 
